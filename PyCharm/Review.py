@@ -36,3 +36,16 @@ def classify_student_scores(scores):
 scores = {"Alice": 95, "Bob": 82, "Charlie": 70, "Diana": 88}
 print(classify_student_scores(scores))
 
+def format_names(name_list):
+    if name_list == []:
+        return []
+    name = name_list[0]
+    if "," in name:
+        formatted = name
+    else:
+        split_name = name.split()
+        if len(split_name) == 2:
+            formatted = split_name[1] + ", " + split_name[0]
+    return [formatted] + format_names(name_list[1:])
+
+print(format_names(["Allen Anderson", "Bruce Baker", "Cook, Claire", "Dunn, David"]))
