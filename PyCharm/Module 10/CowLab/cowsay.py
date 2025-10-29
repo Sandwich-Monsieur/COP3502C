@@ -14,6 +14,7 @@ def find_cow(name, cows):
     return None
 
 def main():
+
     if sys.argv[1] == "-l":
         names = list_cows(get_cows())
         print("Cows available:", " ".join(names))
@@ -24,13 +25,13 @@ def main():
         if cow is None:
             print("Could not find", str(sys.argv[2]), "cow!")
         else:
-            print(message[0], " ".join(message[1:]))
+            print(" ".join(message))
             print(cow.get_image())
 
     else:
         message = sys.argv[1:]
         default_cow = find_cow("heifer", get_cows())
-        print(message[0], " ".join(message[1:]))
+        print(" ".join(message))
         print(default_cow.get_image())
 
 
